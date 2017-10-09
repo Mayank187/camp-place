@@ -1,0 +1,58 @@
+Index: app/src/main/java/com/example/android/campus/company_view.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/android/campus/company_view.java	(revision )
++++ app/src/main/java/com/example/android/campus/company_view.java	(revision )
+@@ -88,37 +88,33 @@
+         {
+             companyinfo compInfo=new companyinfo();
+             compInfo.setName(ds.child(uid).getValue(companyinfo.class).getName());
+-            compInfo.setCgpa(ds.child(uid).getValue(companyinfo.class).getCGPA());
++            compInfo.setCgpa(ds.child(uid).getValue(companyinfo.class).getCgpa());
+             compInfo.setCity(ds.child(uid).getValue(companyinfo.class).getCity());
+             compInfo.setSeats(ds.child(uid).getValue(companyinfo.class).getSeats());
+             compInfo.setState(ds.child(uid).getValue(companyinfo.class).getState());
+             compInfo.setAd(ds.child(uid).getValue(companyinfo.class).getAd());
+-            compInfo.setPh(ds.child(uid).getValue(companyinfo.class).getPhone());
++            compInfo.setPh(ds.child(uid).getValue(companyinfo.class).getPh());
+             compInfo.setMail(ds.child(uid).getValue(companyinfo.class).getMail());
+             compInfo.setAtt(ds.child(uid).getValue(companyinfo.class).getAtt());
+-            compInfo.setHr(ds.child(uid).getValue(companyinfo.class).getHR());
++            compInfo.setHr(ds.child(uid).getValue(companyinfo.class).getHr());
+             compInfo.setPin(ds.child(uid).getValue(companyinfo.class).getPin());
+ 
+-            Log.d(TAG,"showData: name"+compInfo.getName());
+-            Log.d(TAG,"showData: seats"+compInfo.getSeats());
+-            Log.d(TAG,"showData: cgpa"+compInfo.getCGPA());
+-            Log.d(TAG,"showData: att"+compInfo.getAtt());
+-            Log.d(TAG,"showData: hr"+compInfo.getHR());
+-            Log.d(TAG,"showData: ph"+compInfo.getPhone());
++            /*Log.d(TAG,"showData: name"+compInfo.getName());
+             Log.d(TAG,"showData: mail"+compInfo.getMail());
+-            Log.d(TAG,"showData: ad"+compInfo.getAd());
+-            Log.d(TAG,"showData: city"+compInfo.getCity());
+-            Log.d(TAG,"showData: state"+compInfo.getState());
+-            Log.d(TAG,"showData: pin"+compInfo.getPin());
++            Log.d(TAG,"showData: dob"+compInfo.getDob());
++            Log.d(TAG,"showData: col"+compInfo.getCol());
++            Log.d(TAG,"showData: grad"+compInfo.getGrad());
++            Log.d(TAG,"showData: cgpa"+compInfo.getCgpa());
++            Log.d(TAG,"showData: deg"+compInfo.getDeg());
++            Log.d(TAG,"showData: bra"+compInfo.getBra());*/
+ 
+-
+             ArrayList<String> arr=new ArrayList<>();
+             arr.add(compInfo.getName());
+             arr.add(compInfo.getSeats());
+-            arr.add(compInfo.getCGPA());
++            arr.add(compInfo.getCgpa());
+             arr.add(compInfo.getAtt());
+-            arr.add(compInfo.getHR());
+-            arr.add(compInfo.getPhone());
++            arr.add(compInfo.getHr());
++            arr.add(compInfo.getPh());
+             arr.add(compInfo.getMail());
+             arr.add(compInfo.getAd());
+             arr.add(compInfo.getCity());

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#353e4f"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:paddingBottom="50dp"
+    android:paddingRight="40dp"
+    android:paddingLeft="40dp"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true">
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="250dp"
+        android:layout_height="180dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="centerInside"
+        android:src="@drawable/handshake"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/user_name"
+        android:layout_below="@id/img1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        style="@style/edit_text"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/edit_text"
+        android:layout_alignEnd="@+id/user_name"
+        android:layout_alignStart="@+id/user_name"
+        android:layout_below="@+id/user_name"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/button_s"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="LOG IN!"
+        android:onClick="msglog" />
+
+    <TextView android:id="@+id/pass_for"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_marginBottom="24dp"
+        android:text="Forgot Password?"
+        android:layout_marginLeft="20dp"
+        style="@style/forgotpass_style"
+        android:onClick="msgreg"
+        android:textSize="16dp"/>
+
+    <TextView android:id="@+id/link_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pass_for"
+        android:layout_marginBottom="24dp"
+        android:text="No account yet? Create one"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        style="@style/textview_style"
+        android:onClick="msgreg"
+        android:textSize="16dp"/>
+
+</RelativeLayout>

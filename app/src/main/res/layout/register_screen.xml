@@ -1,0 +1,299 @@
+<?xml version="3.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:background="#353e4d">
+
+    <RelativeLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name : "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/firstName"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name : "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/lastName"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E-Mail : "
+                    android:textColor="#9199ac"/>
+
+
+                <EditText
+                    android:id="@+id/email"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="yourname@example.com"
+                    android:inputType="textEmailAddress"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DOB :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/dob"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Education Details"
+                android:textAllCaps="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="#9199ac"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="College :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/col"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Graduation :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/grad"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CGPA :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/cgpa"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Degree :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/deg"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Branch :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/bra"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="School :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/school"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marks(12th) :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/mark12"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType=""/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Year :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/year12"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mark(10th) :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/mark10"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Year :  "
+                    android:textColor="#9199ac"/>
+
+                <EditText
+                    android:id="@+id/year10"
+                    android:background="#fdfdfe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/button_s"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:textAllCaps="true"
+                android:onClick="msgreg"
+                android:text="Register!"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
