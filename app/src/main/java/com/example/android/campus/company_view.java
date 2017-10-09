@@ -36,7 +36,8 @@ public class company_view extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private String uid;
-
+    ArrayList<String> arr=new ArrayList<>();
+    ArrayAdapter adapter;
     private ListView mListView;
 
     @Override
@@ -44,13 +45,13 @@ public class company_view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.company_view);
 
-        mListView=(ListView)findViewById(R.id.list_c);
-
-        mAuth=FirebaseAuth.getInstance();
-        mFirebaseDatabase=FirebaseDatabase.getInstance();
-        mRef=mFirebaseDatabase.getReference().child("Company");
-        FirebaseUser user=mAuth.getCurrentUser();
-        uid=user.getUid();
+        mListView = (ListView) findViewById(R.id.list_c);
+        adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,arr);
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mRef = mFirebaseDatabase.getReference("Company");
+        FirebaseUser user = mAuth.getCurrentUser();
+        uid = user.getUid();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -59,7 +60,7 @@ public class company_view extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    Toast.makeText(context,"Success"+user.getEmail(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Success" + user.getEmail(), Toast.LENGTH_LONG).show();
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -67,12 +68,27 @@ public class company_view extends AppCompatActivity {
                 // ...
             }
         };
-
-        mRef.addValueEventListener(new ValueEventListener() {
+        mRef.child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                companyinfo compInfo = dataSnapshot.getValue(companyinfo.class);
 
-                showData(dataSnapshot);
+                arr.add(compInfo.getName());
+                arr.add(compInfo.getSeats());
+                arr.add(compInfo.getCGPA());
+                arr.add(compInfo.getAtt());
+                arr.add(compInfo.getHR());
+                arr.add(compInfo.getPhone());
+                arr.add(compInfo.getMail());
+                arr.add(compInfo.getAd());
+                arr.add(compInfo.getCity());
+                arr.add(compInfo.getState());
+                arr.add(compInfo.getPin());
+
+
+                mListView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+
             }
 
             @Override
@@ -81,22 +97,48 @@ public class company_view extends AppCompatActivity {
             }
         });
 
+//        mRef.child(uid).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                showData1(dataSnapshot);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//    }
+//    private void showData1(DataSnapshot dataSnapshot)
+//    {
+//
+//        companyinfo compInfo= dataSnapshot.getValue(companyinfo.class);
+//         Log.d(TAG,"showData: name"+compInfo.getName());
+//            Log.d(TAG,"showData: mail"+compInfo.getMail());
+//
+//
+//
+//            Log.d(TAG,"showData: cgpa"+compInfo.getCGPA());
+//
+//    }
+//
     }
-
     private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds:dataSnapshot.getChildren())
         {
             companyinfo compInfo=new companyinfo();
             compInfo.setName(ds.child(uid).getValue(companyinfo.class).getName());
-            compInfo.setCgpa(ds.child(uid).getValue(companyinfo.class).getCgpa());
+            compInfo.setCGPA(ds.child(uid).getValue(companyinfo.class).getCGPA());
             compInfo.setCity(ds.child(uid).getValue(companyinfo.class).getCity());
             compInfo.setSeats(ds.child(uid).getValue(companyinfo.class).getSeats());
             compInfo.setState(ds.child(uid).getValue(companyinfo.class).getState());
             compInfo.setAd(ds.child(uid).getValue(companyinfo.class).getAd());
-            compInfo.setPh(ds.child(uid).getValue(companyinfo.class).getPh());
+            compInfo.setPhone(ds.child(uid).getValue(companyinfo.class).getPhone());
             compInfo.setMail(ds.child(uid).getValue(companyinfo.class).getMail());
             compInfo.setAtt(ds.child(uid).getValue(companyinfo.class).getAtt());
-            compInfo.setHr(ds.child(uid).getValue(companyinfo.class).getHr());
+            compInfo.setHR(ds.child(uid).getValue(companyinfo.class).getHR());
             compInfo.setPin(ds.child(uid).getValue(companyinfo.class).getPin());
 
             /*Log.d(TAG,"showData: name"+compInfo.getName());
@@ -111,10 +153,10 @@ public class company_view extends AppCompatActivity {
             ArrayList<String> arr=new ArrayList<>();
             arr.add(compInfo.getName());
             arr.add(compInfo.getSeats());
-            arr.add(compInfo.getCgpa());
+            arr.add(compInfo.getCGPA());
             arr.add(compInfo.getAtt());
-            arr.add(compInfo.getHr());
-            arr.add(compInfo.getPh());
+            arr.add(compInfo.getHR());
+            arr.add(compInfo.getPhone());
             arr.add(compInfo.getMail());
             arr.add(compInfo.getAd());
             arr.add(compInfo.getCity());
@@ -125,7 +167,7 @@ public class company_view extends AppCompatActivity {
             mListView.setAdapter(adapter);
 
         }
-    }
+  }
 
 
     @Override

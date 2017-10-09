@@ -62,7 +62,7 @@ public class company_register extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
         mFirebaseDatabase=FirebaseDatabase.getInstance();
-        mRef=mFirebaseDatabase.getReference().child("Company");
+        mRef=mFirebaseDatabase.getReference("Company");
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -115,9 +115,9 @@ public class company_register extends AppCompatActivity {
 
                 FirebaseUser user=mAuth.getCurrentUser();
                 String userID=user.getUid();
-                mRef.child(userID);
 
-                mRef.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                mRef.child(userID).setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())

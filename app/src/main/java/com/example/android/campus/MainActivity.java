@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
-    private FirebaseAuth mAuth;
+    public FirebaseAuth mAuth= FirebaseAuth.getInstance();
     private EditText mFirstNamefield;
 
     @Override
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        if(mAuth.getCurrentUser()!=null)
+            startActivity(new Intent(getApplicationContext(),company_register.class));
 
     }
 
